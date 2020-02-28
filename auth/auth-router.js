@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const Auth = require('./auth-model')
+const bcrypt = require('bcrypt')
 
 router.post('/register', (req, res) => {
   if(req.body.username && req.body.password){
+    req.body.password = bcrypt.hashSync(req.body.password, 13)
     Auth.register(req.body)
     .then(id => {
       res.status(201).json({message:`user with id ${id} created.`})
