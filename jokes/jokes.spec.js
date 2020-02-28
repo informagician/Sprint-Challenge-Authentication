@@ -20,7 +20,7 @@ describe('Auth Router', function(){
         it('should return 200', function(){
             return request(server)
             .get('/api/jokes')
-            .set({authorization:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxLCJ1c2VybmFtZSI6Im1pbG8iLCJpYXQiOjE1ODI5MDc3MDEsImV4cCI6MTU4MjkxMTMwMX0.olbsMJBzwIAkDGU2hM_xeA8aGk1vA6GjE2MVZ3u_Rx8'})
+            .set({authorization:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjozLCJ1c2VybmFtZSI6ImFsaSIsImlhdCI6MTU4MjkyNjkxNCwiZXhwIjoxNTgyOTMwNTE0fQ.9I9oT62EvfAiJ32J2Nez03FSnixs79wrfWA6QifOeng'})
             .then(res => {
                 expect(res.status).toBe(200)
                 expect(res.type).toMatch(/json/)
